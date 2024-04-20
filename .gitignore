@@ -1,0 +1,7 @@
+*.ipynb
+*.xlsx
+*.csv
+*.pdf
+*.docx
+*~
+icd10cm-info/
