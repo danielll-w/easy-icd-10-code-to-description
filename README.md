@@ -19,11 +19,33 @@ characters
 
 ## Codes File
 
+| Position | Length | Contents                                             |
+|----------|--------|------------------------------------------------------|
+| 1        | 7      | ICD-10-CM or ICD-10-PCS code. Dots are not included. |
+| 8        | 1      | Blank                                                |
+| 9        | To end | Long description                                     |
+
 ## Order File
+
+| Position | Length | Contents                                                                                                                                         |
+|----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1        | 5      | Order number, right justified, zero filled.                                                                                                      |
+| 6        | 1      | Blank                                                                                                                                            |
+| 7        | 7      | ICD-10-CM or ICD-10-PCS code. Dots are not included.                                                                                             |
+| 14       | 1      | Blank                                                                                                                                            |
+| 15       | 1      | 0 if the code is a “header” –not valid for HIPAA-covered transactions.<br/>1 if the code is valid for submission for HIPAA-covered transactions. |
+| 16       | 1      | Blank                                                                                                                                            |
+| 17       | 60     | Short description                                                                                                                                |
+| 77       | 1      | Blank                                                                                                                                            |
+| 78       | To end | Long description                                                                                                                                 |
 
 # Usage
 
+Load in a fixed width file in whichever language you wish. For Python pandas,
 
+```
+pd.read_fwf()
+```
 
 # Authors
 - Dan Weiss (2024)
