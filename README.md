@@ -44,7 +44,9 @@ characters
 Load in a fixed width file in whichever language you wish. For Python pandas,
 
 ```
-pd.read_fwf()
+import pandas as pd
+icd_codes = pd.read_fwf(icd_codes_path, header = None, colspecs= [(0, 7), (8, 401)])
+icd_order = pd.read_fwf(icd_order_path, header = None, colspecs= [(0, 5), (6, 13), (14, 15), (16, 77)])
 ```
 
 # Authors
